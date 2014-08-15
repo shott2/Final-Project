@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title> Track Trainer </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <h1> Track Trainer </h1>
+    <div class="name">
+    <h2> <%=@track.exerciseName%> </h2>
+    </div>
+    <%if @track.image2_num == @track.image1_num + 1%>
+    <div class="images">
+      <img id = "image1"src= <%=@track.imageLink1%>>
+      <img src= <%=@track.imageLink2%>>
+    </div>
+    <%else%>
+    <div class ="images">
+      <img id = "image1" src= <%=@track.imageLink1%>>
+    </div>
+    <%end%>
+        <ul type = none>
+      <% @track.steps.each do |item|%>
+        <li> <%=item%> </li>
+        <br>
+      <% end%>
+    </ul>
+  </body>
+</html>
+
